@@ -1,0 +1,12 @@
+The best solution is [5, 7, 2, 6, 3, 1, 4, 8], which has 0 collisions
+Elapsed Time: 1.1949653625488281
+Total Iterations: 44075
+  A  B  C  D  E  F  G  H
+ 8 .  .  .  .  .  .  .  x 
+7 .  Q  .  .  .  .  .  . 
+6 .  .  .  x  .  .  .  . 
+5 x  .  .  .  .  .  .  . 
+4 .  .  .  .  .  .  x  . 
+3 .  .  .  .  x  .  .  . 
+2 .  .  x  .  .  .  .  . 
+1 .  .  .  .  .  x  .  . 
