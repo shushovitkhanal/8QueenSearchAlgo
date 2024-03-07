@@ -7,6 +7,11 @@ import time
 Class Representing a Chessboard
 
 Contains all the methods and attributes relating to the board
+
+Program outputs using Unicode to print Chessboard in the terminal
+along with performance of the algorithm
+
+Also prints the board and performance in a txt file called example.txt
 '''
 
 
@@ -125,7 +130,7 @@ class Chessboard:
         return is_queen_on_tile
 
     '''
-    Prints Chessboard on the terminal using Unicode Characters
+    Prints Chessboard on the terminal using Unicode Characters in the terminal
     '''
 
     def print_chessboard(self):
@@ -209,7 +214,6 @@ class Chessboard:
                 if is_queen_on_tile:
                     if j == self.x_unmovable:
                         print(" Q ", end="", file=f)
-                        self.placeFirstQueen = False
                     else:
                         print(" x ", end="", file=f)
                 else:
@@ -223,19 +227,21 @@ class Chessboard:
 '''
 Simulated Annealing Search Algorithm
 which uses different parameters to find a solution
+
+t = Initial temperature
+sch = Scheduling Used
+
+Minimizes the total number of collisions in a chessboard until it reaches 0
 '''
 
 
 def sim_annealing():
+    # Initial Temperature used by the algorithm
     t = 4000
     best_score = 999
     best_solution = [0, 0, 0, 0, 0, 0, 0, 0]
 
-    k = 9
-    l = 6
-
-    fixed_x = (k % 8 + 1)
-    fixed_y = (l % 8 + 1)
+    # Scheduling used by the algorithm
     sch = 0.99
 
     solution_found = False
@@ -251,7 +257,7 @@ def sim_annealing():
     best_score = current_score
 
     total_iterations = 0
-    while (not solution_found):
+    while not solution_found:
         total_iterations += 1
         t *= sch
         test_solution = Chessboard.__new__(Chessboard)
